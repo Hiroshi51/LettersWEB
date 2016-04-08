@@ -102,7 +102,7 @@ $(document).ready(function(){
       	  $('.textSetting').css({width:settings.slideLeftMargin+adjustMargin*2-100+"px",right:"55px",left:"auto"});
       	  $('.next')       .css({top:"100px",left:settings.slideLeftMargin*1.5-50+adjustMargin+"px"});
           $('.back')       .css({top:"100px",left:settings.slideLeftMargin*1.5+1+adjustMargin+"px"});
-        
+          $('#innerMenuArea').width(settings.slideWidth+settings.slideLeftMargin+adjustMargin*2+"px");
       }
       else{
       

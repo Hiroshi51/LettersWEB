@@ -76,13 +76,18 @@ body{
 #header{
   background: rgba(255, 212, 100, 1);
   position: relative;
- 
- 
-  padding:10px 0 10px 0;
+  
 }  
 #innerHeader{
+
+
+}
+#menuAreaWrapper{
   width:100%;
-  margin:0 10px 10px 10px;
+  height:50px;
+  background-color: #fff;
+  position: absolute;
+
 }
 .contentsHolder{
   width:100%;
@@ -142,7 +147,7 @@ p.next:hover,p.back:hover
   overflow: hidden;
 }
 .innerContent{
-  max-width: 1120px;
+ 
   margin:0 auto;
   padding:20px 0 0 0;
 }
@@ -161,6 +166,17 @@ p.next:hover,p.back:hover
 }
 .oneThird, .oneFourth{
   padding:2.5%;
+}
+#innerMenuArea
+{
+ margin:0 auto;
+ position: relative;
+}
+#globalNavi li{
+  float: left;
+  line-height: 50px;
+  margin-right:20px;
+
 }
 
 @media screen and (max-width: 617px) {
