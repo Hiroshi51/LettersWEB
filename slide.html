@@ -1,1 +1,147 @@
+<html>
+<head> 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/kimChangLoading.js"></script>
+    <script src="js/kimChangSlide.js"></script>
+    <script>
+    $(document).ready(function(){
+    	$('html,body').animate({ scrollTop: 0 }, '1');
+    	var loadingHeight = $('#loading-gif').height();
+    	var loadingWidth  = $('#loading-gif').width();
+    	var defaultWidth  = $(window).width();
+    	var defaultHeight = $('#loader-bg').height();
 
+    	$('#loader-img').css({
+    		position:"absolute",
+    		top :defaultHeight/2-loadingHeight/2 + "px",
+    		left:defaultWidth/2-loadingWidth/2 + "px"
+    	});
+    });
+    </script>
+</head>
+<body>
+	<div id="loader-bg"><div id="loader-img"><img id="loading-gif" src="img/loading.gif"/><p class="colorWhite">LOADING…</p></div></div>
+	<div id="wrap">
+		<header>
+		    <div id="header" class="dissapear">
+		        <div id="innerHeader">
+				    <h1>Letters51</h1>
+				    <h2 class="subtitle">creating webSites</h2>
+				    <P class="small">I now try to create this APP to make randam image file names, So that the names won't be the same.</P>
+			    </div>
+		    </div>
+		</header>
+		<section>
+			<div class="contentsHolder">
+			   <div id="recentWork">
+			    <p class="next">></p>
+				<p class="back"><</p>
+			    <div class="textOver">
+				     <div class="textSetting firstText">
+					     <h3>Kim-chang</h3>
+					     <p>How are you today?</p>
+					     <p>ご機嫌いかが？ 今日はとても暖かくいい日だなーなんて</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>Atsushi</h3>
+					     <p>take my daughter's photo!</p>
+					     <p>娘の写真を撮ってほしい！</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>Oda-chang</h3>
+					     <p>You are the Maya Master</p>
+					     <p>Hey! Mayaマスター！</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>TSP</h3>
+					     <p>Let's renovate Mito!!</p>
+					     <p>おつかれさまです。</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>Kim-chang</h3>
+					     <p>How are you today?</p>
+					     <p>ご機嫌いかが？ 今日はとても暖かくいい日だなーなんて</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>Atsushi</h3>
+					     <p>take my daughter's photo!</p>
+					     <p>娘の写真を撮ってほしい！</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>Oda-chang</h3>
+					     <p>You are the Maya Master</p>
+					     <p>Hey! Mayaマスター！</p>
+				     </div>
+				     <div class="textSetting nextText">
+					     <h3>TSP</h3>
+					     <p>Let's renovate Mito!!</p>
+					     <p>おつかれさまです。</p>
+				     </div>
+			    </div>
+                <div id="slideWrapper" class="clearfix">
+				<ul id="mainSlide">
+	                <li class="slide"><img class="slideImg" src="img/p01.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p02.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p03.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p04.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p01.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p02.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p03.jpg"/></li>
+	                <li class="slide"><img class="slideImg" src="img/p04.jpg"/></li>
+				</ul>
+				</div> 
+			  </div>	
+			</div>
+		</section>
+	 	<section>
+			<div class="contentsHolder">
+				<div class="innerContent clearfix">
+				<h3>LettersのWEB制作</h3>
+					<div class="oneThird">
+						<h4>タイトル</h4>
+						<p>文章が入ります。</p>
+					</div>
+					<div class="oneThird">
+						<h4>タイトル</h4>
+						<p>文章が入ります。</p>
+					</div>
+					<div class="oneThird">
+						<h4>タイトル</h4>
+						<p>文章が入ります。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="contentsHolder">
+				<div class="innerContent clearfix">
+				<h3>最近の仕事</h3>
+					<div class="oneFourth">
+						<h4>CRAFT REFLECTION</h4>
+						<p>文章が入ります。</p>
+					</div>
+					<div class="oneFourth">
+						<h4>COFFIN</h4>
+						<p>文章が入ります。</p>
+					</div>
+					<div class="oneFourth">
+						<h4>IBARAKI DADDY</h4>
+						<p>文章が入ります。</p>
+					</div>
+					<div class="oneFourth">
+						<h4>VILLAGE</h4>
+						<p>文章が入ります。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer>
+      <div id="footerWrapper">
+      </div>
+	</footer>
+</body>
+</html>
