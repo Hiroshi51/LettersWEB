@@ -17,7 +17,9 @@ $(document).ready(function(){
   $('.next').on('click',function(event){
   	if(!click_allowed){return};
   	event.preventDefault();
-    clearInterval(autoSlide);
+    if (autoSlide !== false) {
+        clearInterval(autoSlide);
+    }
     settings = setRanges();
   	animateSlideNext(settings);
   	click_allowed = false; 
@@ -31,7 +33,9 @@ $(document).ready(function(){
   $('.back').on('click',function(event){
   	if(!click_allowed){return};
   	event.preventDefault();
-    clearInterval(autoSlide);
+    if (autoSlide !== false) {
+        clearInterval(autoSlide);
+    }
     settings = setRanges();
   	animateSlideBack(settings);
   	click_allowed = false; 
@@ -49,9 +53,7 @@ $(document).ready(function(){
     startAutoSlide();
     windowWidth = $(window).width();
     settings = setRanges();
-    sizeBoxes();
     adjestImgs(windowWidth,settings);
-
   });
   
   function startAutoSlide(){
@@ -60,10 +62,7 @@ $(document).ready(function(){
     },7000);
   }
 
-  function sizeBoxes(){
-     $('.oneThird').height($('.oneThird').width()*1.5);
-     $('.oneFourth').height($('.oneFourth').width()*1.5);
-   }
+
   //デフォルト設定オブジェクト返し
   function setRanges(){
     if(windowWidth > 600){
@@ -105,7 +104,7 @@ $(document).ready(function(){
           $('#innerMenuArea').width(settings.slideWidth+settings.slideLeftMargin+adjustMargin*2+"px");
       }
       else{
-      
+          $('#innerMenuArea').css({width:"100%"});
           $('#innerHeader').css({left:settings.slideLeftMargin+"px"});
       	  $('.slide')      .css({width:settings.slideWidth+"px"});
       	  $('.slideImg')   .css({width:settings.slideWidth+"px"});  
@@ -178,13 +177,11 @@ $(document).ready(function(){
   var defaultHeight = $('#loader-bg').height();
   $('#header').height(defaultHeight);
   $('#innerHeader').css({
-            position:"absolute",
-            top :defaultHeight/2-innerHeaderHeight/2 + "px",
-            left:settings.slideLeftMargin+"px"
+    position:"absolute",
+    top :defaultHeight/2-innerHeaderHeight/2 + "px",
+    left:settings.slideLeftMargin+"px"
   });
   settings = setRanges();
- 
   startAutoSlide();
-  sizeBoxes();
 　 adjestImgs(windowWidth,settings);  
 });

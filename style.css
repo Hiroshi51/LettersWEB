@@ -101,6 +101,7 @@ background-color: #fff;
 }
 
 p.small{
+  width:50%;
   font-size:10px;
   color:#fff;
 }
@@ -125,7 +126,7 @@ p.next,p.back
   background: rgba(255, 212, 100, 1);
   display:block;
   position:absolute;
-  z-index:1000;
+  z-index:500;
   cursor: pointer;
   font-weight: bold;
 }
@@ -176,8 +177,14 @@ p.next:hover,p.back:hover
   float: left;
   line-height: 50px;
   margin-right:20px;
-
+  font-size:15px;
 }
+p.catchyImg,p.catchyImg-work{
+  width:100%;
+  height:auto;
+  background-color: #fff;
+}
+
 
 @media screen and (max-width: 617px) {
 .textOver{
@@ -196,13 +203,21 @@ p.next,p.back
   height: 30px;
   line-height: 30px;
   }
-.oneThird, .oneSecond{
-  width:100%;
+.oneThird,.oneSecond{
+  width:95%;
 }  
 .oneFourth{
-  width:50%;
+  width:45%;
 }
 .oneThird{
   float:none;
+}
+
+#globalNavi li{
+width:20%;
+margin:0 2.5%;
+font-size:12px;
+
+text-align: center;
 }  
 }
