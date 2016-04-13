@@ -140,14 +140,14 @@ $(window).on('load', function(){
           var $nextText = $('.textSetting').eq(slidePosition+1);
           moveSlideForward(settings);
           $currentText.animate({top:"100px",opacity:"0"},animateSpeed);
-          $nextText.animate({top:"20px",opacity:"1"},animateSpeed);
+          $nextText.animate({top:"50px",opacity:"1"},animateSpeed);
           slidePosition++;
 		    }
         else{
           $('#mainSlide').animate({left:settings.startingPosition()+"px"},animateSpeed,easing);
           var $firstText = $('.textSetting').eq(0);
           $currentText.animate({top:"100px",opacity:"0"},animateSpeed);
-          $firstText.animate({top:"20px",opacity:"1"},animateSpeed);
+          $firstText.animate({top:"50px",opacity:"1"},animateSpeed);
           slidePosition = 0;
         }
   }      

@@ -39,7 +39,7 @@
 			 	"z-index": 1000,
 			 	top      : "-50px",
 			 	left     : "0px",
-			 	"borderBottom":"1px dotted #eee"
+			 	
 			})
 			.animate({
 				top      : "0px"
