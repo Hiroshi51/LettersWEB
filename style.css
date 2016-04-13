@@ -65,6 +65,9 @@ h3{
   padding:0 0 5px 0;
   border-bottom:1px solid #ccc;
 }
+h4{
+  margin:10px 0;
+}
 html{
   width:100%;
 }
@@ -78,10 +81,7 @@ body{
   position: relative;
   
 }  
-#innerHeader{
 
-
-}
 #menuAreaWrapper{
   width:100%;
   height:50px;
@@ -89,10 +89,12 @@ body{
   position: absolute;
 
 }
-.contentsHolder{
+.contentsHolder,.sliderHolder{
   width:100%;
   height:auto;
-        background-color: #eee;
+}
+.contentsHolder{
+  padding:40px 0;
 }
 #recentWork{
   margin:0px auto;
@@ -184,8 +186,60 @@ p.catchyImg,p.catchyImg-work{
   height:auto;
   background-color: #fff;
 }
+.catchyImg-work img{
+  width:100%;
+}
+span.language{
+  display: inline-block;
+  background-color: #ccc;
+  font-size:10px;
+  padding:2px;
+  margin:2px;
+  line-height: 13px;
+}
+.languageWrapper{
+  margin:2px 0;
+}
+.createdDate{
+  font-size:12px;
+}
+.postDetail{
+  margin:10px 0;
+}
 
+/*color schemes*/
+.yellow{
+  background: rgba(255, 212, 100, 1) !important;
+}
+.blue{
+  background:#39CCCC !important;
+}
+.green{
+  background:#3D9970 !important;
+}
+.red{
+  background:#FF4136 !important;
+}
+.yellow,.blue,.green,.red
+{
+  color:white;
+}
+.bgc-gray{
+  background-color:#353230;
+}
+.bgc-gray h4,.bgc-gray h3
+{
+  color:white;
+}
+.bgc-gray p
+{
+  color:#9E978E;
+}
+.bgc-white{
+  background-color: #fff;
+}
 
+/*Resposive settings*/
 @media screen and (max-width: 617px) {
 .textOver{
   position:relative;

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).on('load', function(){
   //Configuration	
   var slidePosition = 0;　//現在のスライド位置認識用
   var windowWidth   = $(window).width();　//ウィンドウサイズ監視用
@@ -91,17 +91,18 @@ $(document).ready(function(){
   function adjestImgs(windowWidth,settings){	
 
   	  if(windowWidth > 600){
-      
-          $('#innerHeader').css({left:(windowWidth-(settings.slideWidth+settings.slideLeftMargin+adjustMargin*2))/2+"px"});
+          var leftValue = settings.slideLeftMargin+adjustMargin*2;
+          var widthValue = settings.slideWidth+leftValue;
+          $('#innerHeader').css({left:(windowWidth-(widthValue))/2+"px"});
       	  $('#mainSlide')  .width(settings.mainSlideWidth()).css({left:settings.originalPosition()+"px"});
-          $('.innerContent').width(settings.slideWidth+settings.slideLeftMargin+adjustMargin*2+"px");
+          $('.innerContent').width(widthValue+"px");
       	  $('.slide')      .width(settings.slideWidth);
       	  $('.slideImg')   .width(settings.slideWidth);     
-      	  $('.textOver')   .css({width:settings.slideLeftMargin+adjustMargin*2+"px",left:settings.slideLeftMargin/2-adjustMargin+"px"});
-      	  $('.textSetting').css({width:settings.slideLeftMargin+adjustMargin*2-100+"px",right:"55px",left:"auto"});
+      	  $('.textOver')   .css({width:leftValue+"px",left:settings.slideLeftMargin/2-adjustMargin+"px"});
+      	  $('.textSetting').css({width:leftValue-100+"px",right:"55px",left:"auto"});
       	  $('.next')       .css({top:"100px",left:settings.slideLeftMargin*1.5-50+adjustMargin+"px"});
           $('.back')       .css({top:"100px",left:settings.slideLeftMargin*1.5+1+adjustMargin+"px"});
-          $('#innerMenuArea').width(settings.slideWidth+settings.slideLeftMargin+adjustMargin*2+"px");
+          $('#innerMenuArea').width(widthValue+"px");
       }
       else{
           $('#innerMenuArea').css({width:"100%"});

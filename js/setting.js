@@ -1,21 +1,31 @@
  $(document).ready(function(){
     var windowWidth   = $(window).width();　//ウィンドウサイズ監視用
-    
-	function adjustCatchyImgHeight(){
+  	function adjustCatchyImgHeight(){
 		$('p.catchyImg').height($('p.catchyImg').width());
 		$('p.catchyImg-work').height($('p.catchyImg-work').width());
-        $('.oneThird').height($('.oneThird').width()*1.5);
-        $('.oneFourth').height($('.oneFourth').width()*1.5);
+        for(var j=0; j<2; j++){
+        	var heightName = '.averageHeight'+j;
+			var $height = $(heightName);
+	        var onethirdHeight = new Array();
+	        $height.each(function(){
+	           onethirdHeight.push($(this).height());
+	        });
+	        var maxHeight = 0;
+	        for(var i=0; i < onethirdHeight.length; i++){
+		           if(maxHeight < onethirdHeight[i]){
+		            	maxHeight = onethirdHeight[i];
+		           }
+	        }
+	        $height.height(maxHeight);
+	        }
     } 
 
     var resizeflag = false;
 	$(window).resize(function(){
-
 	if(resizeflag != false){
 		clearTimeout(resize); 
 	}
 	var resize = setTimeout(adjustCatchyImgHeight,100);
-
 	});
     
     var appearAllowed = true;
@@ -40,15 +50,21 @@
 			$menuAreaWrapper.animate({
 				top      : "-50px"
 			},50);
-
-			var backToOriginalPosi = setTimeout(function(){
+			appearAllowed = true;
+        }
+		if(scrollAmount == 0 && appearAllowed == true){	
+			
 				$menuAreaWrapper.css({
+			 	position : "relative"
+		    	});
+				$menuAreaWrapper.animate({
 			 	position : "relative",
 			 	top      : "0px"
-		    	});
-			},200);
-		appearAllowed = true;
-     	}
+		    	},200);
+		
+	
+	    }
+     
      	
 	});
 	//Inicially called functions
