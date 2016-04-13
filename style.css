@@ -159,11 +159,17 @@ p.next:hover,p.back:hover
 }
 .oneThird{
   width:28.3%;
+  height:auto;
   float:left;
 }
 .oneFourth{
   width:20%;
   float:left;
+  height:auto;
+}
+.workDetail
+{
+  height:auto;
 }
 #footerWrapper{
   width:100%;
