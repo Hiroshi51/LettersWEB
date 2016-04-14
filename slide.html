@@ -60,33 +60,33 @@
 			<div class="contentsHolder bgc-white">
 				<div class="innerContent clearfix">
 				<h3 class="icon-compose">最近の仕事</h3>
-					<div class="oneFourth">
+					<div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img /></p>
-					    <div class="workDetail averageHeight0">
+					    <div class="workDetail">
 							<h4>CRAFT REFLECTION</h4>
 							<p>動画制作をしているCRAFT REFLECTIONさんです。動画のアーカイブ化を目的としたサイトです。</p>
 						</div>
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">php</span><span class="language green">MySQL</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
-					<div class="oneFourth">
+					<div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img /></p>
-					    <div class="workDetail averageHeight0">
+					    <div class="workDetail">
 						<h4>COFFIN</h4>
 							<p>茨城県つくば市にある美容室です。お客様オリジナルのブログを作成しています。</p>
 						</div>
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">WORDPRESS</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
-				    <div class="oneFourth">
+				    <div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img /></p>
-						<div class="workDetail averageHeight0">
+						<div class="workDetail">
 							<h4>IBARAKI DADDY</h4>
 							<p>小さなお子さんをもつパパさん目線で書いているブログサイトです。カラフルに仕上げてあり、シンプルにブログ機能に特化して作ってあります。</p>
 						</div>
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">php</span><span class="language green">MySQL</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
-					<div class="oneFourth">
+					<div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img src="img/works/thumnails/nakajimaSoft.jpg"/></p>
-						<div class="workDetail averageHeight0">
+						<div class="workDetail">
 							<h4>中島ソフトウェアエンジニアリング</h4>
 							<p>茨城県水戸市にある美容室です。お客様オリジナルのブログを作成しています。</p>
 						</div>
@@ -162,16 +162,13 @@
 						 <p>HPってなんで必要なのか真剣に考え始める。</p>
 				     </div>
 				      <div class="textSetting nextText">
-					     <h3 class="icon-calendar">2011年10月</h3>
-						　<p>サイトをいくつも制作し、コーディングが楽しくなる。</p>
-						 <p>このころjQueryを覚える。</p>
+					     <h3 class="icon-calendar">2014年10月</h3>
+						　<p>JavaScript,phpを本格的に身に着ける。</p>
 				     </div>
 				     <div class="textSetting nextText">
-					     <h3 class="icon-calendar">2011年10月</h3>
-						　<p>サイトをいくつも制作し、コーディングが楽しくなる。</p>
-						 <p>このころjQueryを覚える。</p>
+					     <h3 class="icon-calendar">2015年10月</h3>
+						　<p>オリジナルブログ GoiPress 開発着手</p>
 				     </div>
-				     
 			    </div>
                 <div id="slideWrapper" class="clearfix">
 				<ul id="mainSlide">
@@ -181,7 +178,6 @@
 	                <li class="slide"><img class="slideImg" src="img/p04.jpg"/></li>
 	                <li class="slide"><img class="slideImg" src="img/p01.jpg"/></li>
 	                <li class="slide"><img class="slideImg" src="img/p02.jpg"/></li>
-	                
 				</ul>
 				</div> 
 			  </div>	
@@ -189,8 +185,54 @@
 		</section>
 	</div>
 	<footer>
-      <div id="footerWrapper">
-      </div>
+		<div id="footerMainWrapper">
+			<div id="snsIconsWrapper">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div id="footerElmWrapper">
+				<div class="footerElm">
+				    <h4>最近の仕事</h4>
+					<ul>
+						<li><a class="icon-add" href="#">CRAFT REFLECTION</a></li>
+						<li><a class="icon-add" href="#">COFFIN</a></li>
+						<li><a class="icon-add" href="#">IBARAKI DADDY</a></li>
+						<li><a class="icon-add" href="#">中島ソフトウェアエンジニアリング</a></li>
+					</ul>
+				</div>
+				<div class="footerElm">
+				    <h4>ブログ記事</h4>
+					<ul>
+						<li><a class="icon-add" href="#">CRAFT REFLECTION</a></li>
+						<li><a class="icon-add" href="#">COFFIN</a></li>
+						<li><a class="icon-add" href="#">IBARAKI DADDY</a></li>
+						<li><a class="icon-add" href="#">中島ソフトウェアエンジニアリング</a></li>
+					</ul>
+				</div>
+				<div class="footerElm">
+				    <h4>クイックお問い合わせ</h4>
+					<form method="post" action="">
+					    <dl>
+						    <dt><span class="alert">必須</span>名前</dt>
+						    <dd><input type="text" id="name" maxlength="255"/></dd>
+					    </dl>
+					    <dl>
+						    <dt><span class="alert">必須</span>Email</dt>
+						    <dd><input type="text" id="email" maxlength="255"/></dd>
+					    </dl>
+					    <dl>
+						    <dt><span class="alert">必須</span>内容</dt><dd><textarea name="message" id="message" cols="50" rows="10"></textarea></dd>
+					    </dl>
+					    <input type="submit" value="SEND"/>
+					</form>
+				</div>
+				<small>All right reserved(c)　Letters.Co.Ltd.,
+			</div>	
+		</div>
 	</footer>
 	<script src="js/kimChangSlide.js"></script>
 	<script src="js/setting.js"></script>

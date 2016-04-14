@@ -17,7 +17,7 @@
 		           }
 	        }
 	        $height.height(maxHeight);
-	        console.log(maxHeight);
+	      
 	        }
     } 
 
