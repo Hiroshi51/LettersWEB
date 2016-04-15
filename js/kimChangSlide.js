@@ -5,7 +5,7 @@ $(window).on('load', function(){
   var slideWidth    = 0;  //画像一つの横幅用
   var sliderMargin  = 0;  //スライドの左マージン用
   var slideHeight   = 0;  //スライドの高さ用
-  var adjustMargin  = 70; //両サイドのマージンを調整
+  var adjustMargin  = 40; //両サイドのマージンを調整
   var easing        = "easeInOutCirc"; //イージングの種類
   var animateSpeed  = 800; //全体的なアニメーションの速さ
   var settings    = {}; //スライドのポジション設定
@@ -56,6 +56,7 @@ $(window).on('load', function(){
     adjestImgs(windowWidth,settings);
   });
   
+
   function startAutoSlide(){
       autoSlide = setInterval(function(){
       animateSlideNext(settings);
@@ -96,6 +97,7 @@ $(window).on('load', function(){
           $('#innerHeader').css({left:(windowWidth-(widthValue))/2+"px"});
       	  $('#mainSlide')  .width(settings.mainSlideWidth()).css({left:settings.originalPosition()+"px"});
           $('.innerContent').width(widthValue+"px");
+          $('#footerElmWrapper').width(widthValue+"px");
       	  $('.slide')      .width(settings.slideWidth);
       	  $('.slideImg')   .width(settings.slideWidth);     
       	  $('.textOver')   .css({width:leftValue+"px",left:settings.slideLeftMargin/2-adjustMargin+"px"});
@@ -110,6 +112,7 @@ $(window).on('load', function(){
       	  $('.slide')      .css({width:settings.slideWidth+"px"});
       	  $('.slideImg')   .css({width:settings.slideWidth+"px"});  
           $('.innerContent').width(settings.slideWidth+"px");
+          $('.footerElmWrapper').width(settings.slideWidth+"px");
           var adjustHeight = parseInt($('.textOver').height()) - 15;
           slideHeight = $('.slide').height();                
       	  $('#mainSlide')  .css({width:settings.mainSlideWidth()+"px",left:settings.slideLeftMargin-slidePosition*settings.slideWidth+"px",marginLeft:0});
@@ -176,7 +179,7 @@ $(window).on('load', function(){
   //ページロード時のスライド表示
   var innerHeaderHeight = $('#innerHeader').height();
   var defaultHeight = $('#loader-bg').height();
-  $('#header').height(defaultHeight);
+  $('#header').height(defaultHeight-50);
   $('#innerHeader').css({
     position:"absolute",
     top :defaultHeight/2-innerHeaderHeight/2 + "px",

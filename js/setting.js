@@ -17,7 +17,6 @@
 		           }
 	        }
 	        $height.height(maxHeight);
-	      
 	        }
     } 
 
@@ -26,7 +25,7 @@
 	if(resizeflag != false){
 		clearTimeout(resize); 
 	}
-	var resize = setTimeout(adjustCatchyImgHeight,100);
+	var resize = setTimeout(adjustCatchyImgHeight,200);
 	});
     
     var appearAllowed = true;
