@@ -1,25 +1,33 @@
  $(document).ready(function(){
-    var windowWidth   = $(window).width();　//ウィンドウサイズ監視用
+ 	//inicialize the window width
+    var windowWidth = $(window).width();　
   	function adjustCatchyImgHeight(){
 		$('p.catchyImg').height($('p.catchyImg').width());
 		$('p.catchyImg-work').height($('p.catchyImg-work').width());
-        for(var j=0; j<2; j++){
-        	var heightName = '.averageHeight'+j;
-			var $height = $(heightName);
-	        var onethirdHeight = new Array();
-	        $height.each(function(){
-	           onethirdHeight.push($(this).height());
-	        });
-	        var maxHeight = 0;
-	        for(var i=0; i < onethirdHeight.length; i++){
-		           if(maxHeight < onethirdHeight[i]){
-		            	maxHeight = onethirdHeight[i];
-		           }
-	        }
-	        $height.height(maxHeight);
-	        }
+        setUniformHeight();
     } 
+    function setUniformHeight(){
+		for(var j=0; j<2; j++){
+		    	//genereate class name
+		    	var heightName = '.averageHeight'+j;
 
+		    	//get the class object
+				var $height = $(heightName);
+
+				//inicialize maxHeight
+		        var maxHeight = 0;
+
+		        //inspect which one is the heighest div.
+		        $height.each(function(){
+		           if($(this).height() > maxHeight){
+		           	maxHeight = $(this).height();
+		           }
+		        });
+
+		        //set this height to the heighest
+		        $height.height(maxHeight);
+		}
+    }
     var resizeflag = false;
 	$(window).resize(function(){
 	if(resizeflag != false){
@@ -30,13 +38,12 @@
     
     var appearAllowed = true;
     var $menuAreaWrapper = $('#menuAreaWrapper');
-    var $innerMenuArea = $('#innerMenuArea');
+    
 	$(window).on('scroll',function(){
 		var scrollAmount = $(window).scrollTop();
 		if(scrollAmount > 500 && appearAllowed == true){
 			$menuAreaWrapper.css({
 			 	position : "fixed",
-			 	"z-index": 1000,
 			 	top      : "-50px",
 			 	left     : "0px",
 			 	
@@ -49,24 +56,24 @@
  		if(scrollAmount <= 500 && appearAllowed == false){
 			$menuAreaWrapper.animate({
 				top      : "-50px"
-			},50);
+			},300);
 			appearAllowed = true;
         }
 		if(scrollAmount == 0 && appearAllowed == true){	
 			
 				$menuAreaWrapper.css({
-			 	position : "relative"
+			 	position : "absolute"
 		    	});
 				$menuAreaWrapper.animate({
-			 	position : "relative",
+			 	position : "absolute",
 			 	top      : "0px"
-		    	},200);
+		    	},300);
 		
 	
 	    }
      
      	
 	});
-	//Inicially called functions
+	//Inicially call this functions
 	adjustCatchyImgHeight();
 });  

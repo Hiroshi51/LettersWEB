@@ -9,8 +9,11 @@ ul{
 p{
   font-size:12px;
 }
-li.slide{
+li{
   list-style-type: none;
+}
+li.slide{
+
   position: static;
   float:left;
   overflow: hidden;
@@ -55,10 +58,20 @@ li.slide img{
   opacity:0;
 }
 h1{
+  width: auto;
+  position: absolute;
+  left:0px;
+  font-size: 13px;
   margin:0px;
+  line-height: 50px;
+  font-weight: normal;
+}
+p.logo{
+  font-size:30px;
+  margin:0px;
+  font-weight: bold;
    font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
 }
-
 h2.subtitle{
   color:#fff;
   font-size:15px;
@@ -84,8 +97,36 @@ body{
 #header{
   background: rgba(255, 212, 100, 1);
   position: relative;
+  overflow: hidden;
   
-}  
+  
+} 
+#headerContent{
+  margin:0 auto;
+  position: relative;
+} 
+#innerHeader{
+  position:relative;
+  width:40%;
+  margin:0;
+   float:left;
+}
+#headerRight{
+  position:relative;
+  width:60%;
+  
+  float:right;
+  margin:0;
+  background-color:#000;
+
+}
+img#mainGif{
+   width:100%;
+  height:auto;
+  display:block;
+  position:absolute;
+
+}
 
 #menuAreaWrapper{
   width:100%;
@@ -95,7 +136,7 @@ body{
   box-shadow:0px 0px 2px 1px #eee;
   -moz-box-shadow:0px 0px 2px 1px #eee;
   -webkit-box-shadow:0px 0px 2px 1px #eee;
-
+  z-index:1000;
 }
 .contentsHolder,.sliderHolder{
   width:100%;
@@ -113,7 +154,7 @@ background-color: #fff;
 p.small{
   width:50%;
   font-size:10px;
-  color:#fff;
+  color: #353230;
 }
 #mainSlide{
   position:relative;
@@ -190,11 +231,16 @@ p.next:hover,p.back:hover
  margin:0 auto;
  position: relative;
 }
+#globalNavi{
+  position: absolute;
+  right:0;
+}
 #globalNavi li{
   float: left;
   line-height: 50px;
-  margin-right:20px;
+  margin-left:20px;
   font-size:15px;
+  list-style-type: none;
 }
 p.catchyImg,p.catchyImg-work{
   width:100%;
@@ -264,7 +310,25 @@ span.alert
 form dt{
   font-size: 14px;
 }
-
+#innersnsIconsWrapper{
+  margin:0 auto;  
+  position: relative;;
+}
+ul#snsIconList{
+  position: absolute;;
+  right:0;
+  top:12px;
+}
+ul#snsIconList li {
+  float:left;
+  margin-left:5px;
+  color:rgba(255, 212, 100, 1);
+  font-size:12px;
+  line-height: 28px
+}
+ul#snsIconList li img{
+  width:25px;
+}
 /*color schemes*/
 .yellow{
   background: rgba(255, 212, 100, 1) !important;
@@ -287,7 +351,7 @@ form dt{
 }
 .bgc-gray h4,.bgc-gray h3
 {
-  color:white;
+  color:rgba(255, 212, 100, 1);
 }
 .bgc-gray p
 {
@@ -340,8 +404,11 @@ text-align: center;
 }  
 
 .footerElm{
-  width:90%;
-  margin:20px 5%;
+  width:100%;
+  margin:20px 0%;
 }
+#headerRight{
+  display:none;
 
+}
 }

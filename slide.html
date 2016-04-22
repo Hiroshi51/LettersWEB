@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head> 
     <meta charset="utf-8">
@@ -7,16 +8,17 @@
     <link rel="stylesheet" href="icons.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="js/kimChangLoading.js"></script>
-   
-</head>
+    <script src="js/setting.js"></script>
+	<script src="js/kimChangSlide.js"></script>
+	
 <body>
-	<div id="loader-bg"><div id="loader-img"><img id="loading-gif" src="img/loading.gif"/><p class="colorWhite">LOADING…</p></div></div>
+	
 	<div id="wrap">
 		<header>
 		    <div id="header" class="dissapear">
 		        <div id="menuAreaWrapper">
 			        <div id="innerMenuArea" class="clearfix">
+			        <h1>茨城全域でWEB制作中</h1>
 				        <nav>
 					        <ul id="globalNavi">
 					          <li>WORKS</li>
@@ -27,10 +29,18 @@
 				        </nav>
 			        </div>
 		        </div>
-		        <div id="innerHeader">
-				    <h1>Letters51</h1>
-				    <h2 class="subtitle">creating webSites</h2>
-				    <P class="small">I now try to create this APP to make randam image file names, So that the names won't be the same.</P>
+                
+                <div id="headerContent">
+			        <div id="innerHeader">
+					    <p class="logo">Letters51</p>
+					    <h2 class="subtitle">We Create WebSites</h2>
+					    <P class="small">WEBサイト・アプリケーションを専門に作っています。茨城全域から、県外の方までお気軽にお問合せください。</P>
+				    </div>
+
+				    <div id="headerRight">
+                        <img id = "mainGif" src="img/mathieu.gif"/>
+ 
+				    </div>
 			    </div>
 		    </div>
 		</header>
@@ -64,34 +74,34 @@
 				<h3 class="icon-compose">最近の仕事</h3>
 					<div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img /></p>
-					    <div class="workDetail">
+					   
 							<h4>CRAFT REFLECTION</h4>
 							<p>動画制作をしているCRAFT REFLECTIONさんです。動画のアーカイブ化を目的としたサイトです。</p>
-						</div>
+						
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">php</span><span class="language green">MySQL</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
 					<div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img /></p>
-					    <div class="workDetail">
+					   
 						<h4>COFFIN</h4>
 							<p>茨城県つくば市にある美容室です。お客様オリジナルのブログを作成しています。</p>
-						</div>
+						
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">WORDPRESS</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
 				    <div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img /></p>
-						<div class="workDetail">
+						
 							<h4>IBARAKI DADDY</h4>
 							<p>小さなお子さんをもつパパさん目線で書いているブログサイトです。カラフルに仕上げてあり、シンプルにブログ機能に特化して作ってあります。</p>
-						</div>
+						
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">php</span><span class="language green">MySQL</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
 					<div class="oneFourth averageHeight0">
 					    <p class="catchyImg-work"><img src="img/works/thumnails/nakajimaSoft.jpg"/></p>
-						<div class="workDetail">
+						
 							<h4>中島ソフトウェアエンジニアリング</h4>
 							<p>茨城県水戸市にある美容室です。お客様オリジナルのブログを作成しています。</p>
-						</div>
+						
 						<div class="languageWrapper"><span class="language blue">HTML5</span><span class="language red">WORDPRESS</span><span class="language yellow">スマフォ対応</span></div>
 					</div>
 				</div>
@@ -189,12 +199,15 @@
 	<footer>
 		<div id="footerMainWrapper">
 			<div id="snsIconsWrapper">
-				<ul>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
+				<div id="innersnsIconsWrapper" class="clearfix">
+					<ul id="snsIconList">
+				     	<li>Cross Browser Supported</li>
+						<li><img src="img/browser/chrome.png"/></li>
+						<li><img src="img/browser/ie.png"/></li>
+						<li><img src="img/browser/safari.png"/></li>
+						<li><img src="img/browser/firefox.png"/></li>
+					</ul>
+				</div>
 			</div>
 			<div id="footerElmWrapper" class="clearfix">
 				<div class="footerElm">
@@ -236,22 +249,6 @@
 			</div>	
 		</div>
 	</footer>
-	<script src="js/kimChangSlide.js"></script>
-	<script src="js/setting.js"></script>
-	<script>
-	$(document).ready(function(){
-	$('html,body').animate({ scrollTop: 0 }, '1');
-	var loadingHeight = $('#loading-gif').height();
-	var loadingWidth  = $('#loading-gif').width();
-	var defaultWidth  = $(window).width();
-	var defaultHeight = $('#loader-bg').height();
 
-	$('#loader-img').css({
-		position:"absolute",
-		top :defaultHeight/2-loadingHeight/2 + "px",
-		left:defaultWidth/2-loadingWidth/2 + "px"
-	});
-	});
-	</script>
 </body>
 </html>

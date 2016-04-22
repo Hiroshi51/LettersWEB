@@ -1,7 +1,8 @@
-$(window).on('load', function(){
+$(document).ready(function(){
   //Configuration	
   var slidePosition = 0;　//現在のスライド位置認識用
   var windowWidth   = $(window).width();　//ウィンドウサイズ監視用
+  var defaultHeight = 0;
   var slideWidth    = 0;  //画像一つの横幅用
   var sliderMargin  = 0;  //スライドの左マージン用
   var slideHeight   = 0;  //スライドの高さ用
@@ -11,7 +12,9 @@ $(window).on('load', function(){
   var settings    = {}; //スライドのポジション設定
   var NumberOfSlides = $('li.slide').length;
   var autoSlide = false;
-
+  var $headerRight = $('#headerRight');
+  var $innerHeader = $('#innerHeader');
+  var gifHeight = 0;
   //次へボタンの動作設定
   var click_allowed = true;
   $('.next').on('click',function(event){
@@ -92,27 +95,40 @@ $(window).on('load', function(){
   function adjestImgs(windowWidth,settings){	
 
   	  if(windowWidth > 600){
+
+          
           var leftValue = settings.slideLeftMargin+adjustMargin*2;
           var widthValue = settings.slideWidth+leftValue;
-          $('#innerHeader').css({left:(windowWidth-(widthValue))/2+"px"});
-      	  $('#mainSlide')  .width(settings.mainSlideWidth()).css({left:settings.originalPosition()+"px"});
-          $('.innerContent').width(widthValue+"px");
-          $('#footerElmWrapper').width(widthValue+"px");
-      	  $('.slide')      .width(settings.slideWidth);
-      	  $('.slideImg')   .width(settings.slideWidth);     
-      	  $('.textOver')   .css({width:leftValue+"px",left:settings.slideLeftMargin/2-adjustMargin+"px"});
+          $innerHeader.css({left:0});
+          
+          
+
+          var tempHeigh = setTimeout(function(){
+            adjustHeaderHeight();
+            gifHeight = $('#mainGif').height();
+            gifTop = defaultHeight/2 - gifHeight/2;
+            $('#mainGif').css({top:gifTop + "px"});
+          
+          },50);
+
+      	  $('#mainSlide').width(settings.mainSlideWidth()).css({left:settings.originalPosition()+"px"});
+          $('.innerContent,#footerElmWrapper,#innerMenuArea,#headerContent,#innersnsIconsWrapper').width(widthValue+"px");
+      	  $('.slide,.slideImg').width(settings.slideWidth);
+      	  $('.textOver').css({width:leftValue+"px",left:settings.slideLeftMargin/2-adjustMargin+"px"});
       	  $('.textSetting').css({width:leftValue-100+"px",right:"55px",left:"auto"});
-      	  $('.next')       .css({top:"100px",left:settings.slideLeftMargin*1.5-50+adjustMargin+"px"});
-          $('.back')       .css({top:"100px",left:settings.slideLeftMargin*1.5+1+adjustMargin+"px"});
-          $('#innerMenuArea').width(widthValue+"px");
+      	  $('.next').css({top:"100px",left:settings.slideLeftMargin*1.5-50+adjustMargin+"px"});
+          $('.back').css({top:"100px",left:settings.slideLeftMargin*1.5+1+adjustMargin+"px"});
       }
       else{
+           var tempHeigh = setTimeout(function(){
+          adjustHeaderHeight();
+           },50);
           $('#innerMenuArea').css({width:"100%"});
-          $('#innerHeader').css({left:settings.slideLeftMargin+"px"});
+          $innerHeader.css({left:settings.slideLeftMargin});
       	  $('.slide')      .css({width:settings.slideWidth+"px"});
       	  $('.slideImg')   .css({width:settings.slideWidth+"px"});  
           $('.innerContent').width(settings.slideWidth+"px");
-          $('.footerElmWrapper').width(settings.slideWidth+"px");
+          $('#footerElmWrapper').width(settings.slideWidth+"px");
           var adjustHeight = parseInt($('.textOver').height()) - 15;
           slideHeight = $('.slide').height();                
       	  $('#mainSlide')  .css({width:settings.mainSlideWidth()+"px",left:settings.slideLeftMargin-slidePosition*settings.slideWidth+"px",marginLeft:0});
@@ -176,16 +192,22 @@ $(window).on('load', function(){
         }
    }
 
+  function adjustHeaderHeight(){
+      defaultHeight = $(window).height();
+      defaultHeight2 = defaultHeight-50;
+      var innerHeaderHeight = $innerHeader.height();
+      $('#header').height(defaultHeight2);
+      $innerHeader.css({
+      top :defaultHeight/2-innerHeaderHeight/2 + "px",
+      });
+      $headerRight.height(defaultHeight);
+  }
+
+
+
   //ページロード時のスライド表示
-  var innerHeaderHeight = $('#innerHeader').height();
-  var defaultHeight = $('#loader-bg').height();
-  $('#header').height(defaultHeight-50);
-  $('#innerHeader').css({
-    position:"absolute",
-    top :defaultHeight/2-innerHeaderHeight/2 + "px",
-    left:settings.slideLeftMargin+"px"
-  });
   settings = setRanges();
   startAutoSlide();
 　 adjestImgs(windowWidth,settings);  
+
 });
